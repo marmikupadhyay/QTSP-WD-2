@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Note Maker</title>
+  </head>
+  <body>
+    <section class="sec-1 row">
+      <div class="col-3 bg-dark text-white">
+        <h1 class="display-3">
+          Your Notes
+        </h1>
+        <div class="form-container">
+          <form action="" id="note-form">
+            <div class="form-group">
+              <label for="">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter title here"
+                id="title"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">Content</label>
+              <textarea
+                class="form-control"
+                id="contentbody"
+                cols="30"
+                rows="10"
+                placeholder="Enter Text Here"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for=""
+                >Set Priority <br />
+                (Higher Number is Higher Priority)</label
+              >
+              <select name="" id="priority" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div class="btn btn-primary btn-block" id="add">
+              Add
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-9 bg-secondary"></div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
