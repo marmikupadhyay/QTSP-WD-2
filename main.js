@@ -2,7 +2,7 @@ var btn = document.getElementById("add");
 btn.addEventListener("click", e => {
   addNote();
 });
-var c = 1;
+var c = 0;
 var notes = [];
 bringNotes();
 postNotes();
@@ -28,9 +28,9 @@ function addNote() {
   }
   document.getElementById("title").value = "";
   document.getElementById("contentbody").value = "";
+  c++;
   saveNotes();
   postNotes();
-  c++;
   btn.innerHTML = "Add";
 }
 
@@ -38,6 +38,7 @@ function addNote() {
 
 function saveNotes() {
   localStorage.setItem("notes", JSON.stringify(notes));
+  localStorage.setItem("notesLength", c);
 }
 
 //Function to Bring Notes from Local Storage
@@ -48,7 +49,9 @@ function bringNotes() {
   } else {
     notes = [];
   }
-  c = notes.length + 1;
+  console.log(notes.length);
+  if (localStorage.getItem("notesLength") != null)
+    c = parseInt(localStorage.getItem("notesLength"));
   console.log(c);
   console.log(notes);
 }
