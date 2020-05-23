@@ -3,23 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="main.css" />
     <title>Note Maker</title>
   </head>
   <body>
     <section class="sec-1 row">
-      <div class="col-3 bg-dark text-white">
+      <div class="col-md-4 col-xs-12 addnote bg-dark text-white">
         <h1 class="display-3">
           Your Notes
         </h1>
-        <div class="form-container">
+        <hr class="cyan accent-1" />
+
+        <div class="form-container z-depth-5 blue lighten-4">
           <form action="" id="note-form">
             <div class="form-group">
-              <label for="">Title</label>
+              <label for="title">Title</label>
               <input
                 type="text"
                 class="form-control"
@@ -28,19 +42,18 @@
               />
             </div>
             <div class="form-group">
-              <label for="">Content</label>
+              <label for="contentbody">Content</label>
               <textarea
                 class="form-control"
                 id="contentbody"
-                cols="30"
-                rows="10"
                 placeholder="Enter Text Here"
               ></textarea>
             </div>
             <div class="form-group">
-              <label for=""
-                >Set Priority <br />
-                (Higher Number is Higher Priority)</label
+              <label for="priority"
+                >Set Priority
+                <br />
+                <small>(Higher Number is Higher Priority)</small></label
               >
               <select name="" id="priority" class="form-control">
                 <option value="1">1</option>
@@ -54,7 +67,9 @@
           </form>
         </div>
       </div>
-      <div class="col-9 bg-secondary"></div>
+
+      <!-- This is where all the notes will be displayed -->
+      <div class="col-md-8 col-xs-12 note-box teal accent-1"></div>
     </section>
     <script src="main.js"></script>
   </body>

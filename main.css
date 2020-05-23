@@ -9,22 +9,38 @@
   display: flex;
   flex-direction: row;
 }
-.col-3 {
+.addnote {
   height: 100vh;
   position: fixed;
-  width: 25%;
+  /* width: 25%; */
   margin: 0;
+  z-index: 2;
 }
-.col-3 .h1 {
+.addnote .h1 {
   margin: 10px;
 }
 .form-container {
   width: 100%;
-  margin: 10px;
+  margin: 0;
+  padding: 10px 40px 20px 40px;
 }
 
+label {
+  font-size: 2em;
+}
+
+input {
+  padding-left: 10px !important;
+  background: white !important;
+}
+
+small {
+  font-size: 0.5em;
+  margin: 0;
+  padding: 0;
+}
 .form-control {
-  width: 80%;
+  width: 80% !important;
 }
 textarea {
   resize: vertical;
@@ -34,22 +50,22 @@ textarea {
   display: none;
 }
 
-.col-9 {
+.note-box {
   margin: 0;
-  width: 75%;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 25%;
+  margin-left: 33.33%;
   min-height: 100vh;
+  justify-content: space-around;
 }
+
 .card {
   min-width: 300px;
   height: 300px;
   margin: 20px;
-  /* background: rgb(240, 237, 74); */
   border-radius: 0;
-  box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.2);
   position: relative;
+  transform: rotate(10deg);
 }
 
 form .btn {
@@ -71,4 +87,20 @@ form .btn {
   width: 20px;
   padding: 0;
   text-align: center;
+}
+
+@media only screen and (max-width: 690px) {
+  .row {
+    flex-direction: column;
+  }
+  .addnote {
+    position: unset;
+  }
+  .note-box {
+    margin-left: 0;
+  }
+  .card {
+    min-width: 70%;
+    min-height: 250px;
+  }
 }
