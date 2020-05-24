@@ -61,6 +61,14 @@ function bringNotes() {
 function postNotes() {
   var pagearea = document.querySelector(".note-box");
   pagearea.innerHTML = "";
+  var title = document.createElement("div");
+  title.className = "title";
+  title.innerHTML = `<h1 class="display-3">
+          YOUR NOTES
+        </h1>
+        <hr class="cyan accent-1" />
+  `;
+  pagearea.appendChild(title);
   notes.sort(function (a, b) {
     return b.pri - a.pri;
   });
@@ -76,7 +84,7 @@ function postNotes() {
   <div class="card-body">
   <h2 style="display:none">${e.id}</h2>
   <h3 class="card-title">${e.title}</h3>
-  <p class="card-text">${e.content}</p>
+  <pre class="card-text">${e.content}</pre>
   <button class="btn btn-primary float-left edit">Edit</button>
   <button class="btn btn-danger delete"><i class="material-icons">close</i></button>
   </div>
